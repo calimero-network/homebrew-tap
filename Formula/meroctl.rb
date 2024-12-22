@@ -1,30 +1,29 @@
 class Meroctl < Formula
     desc "Command-line tool for Calimero Network"
     homepage "https://github.com/calimero-network/core"
-    version "0.1.1"
-  
+    version "0.2.0"
+
     if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/calimero-network/core/releases/download/v0.1.1/meroctl_aarch64-apple-darwin.tar.gz"
-      sha256 "7eac165f59473a7476fa08b26f9f9d1ae0f8dac1b9680fcfdd2903b55c3f8f0b"
+      url "https://github.com/calimero-network/core/releases/download/meroctl-0.2.0/meroctl_aarch64-apple-darwin.tar.gz"
+      sha256 "e6b1649e28cbc1e741ebd903ed6371e7a48ff491404dd4532ff3f5154d9f60b5"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://github.com/calimero-network/core/releases/download/v0.1.1/meroctl_x86_64-apple-darwin.tar.gz"
-      sha256 "2dffb5c0d42c56ade21e17a627101e3313fec0a2ab8e04ecded2323bc54c0f8c"
+      url "https://github.com/calimero-network/core/releases/download/meroctl-0.2.0/meroctl_x86_64-apple-darwin.tar.gz"
+      sha256 "39debe38ab613cb055fe8b16af61a01655feb7dc5664e49d908f3e13689514b2"
     elsif OS.linux? && Hardware::CPU.arm?
-      url "https://github.com/calimero-network/core/releases/download/v0.1.1/meroctl_aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f5fdb84fb04dafc9cd1c64a538b56dc999643670c49494abff809ae2cc33f40e"
+      url "https://github.com/calimero-network/core/releases/download/meroctl-0.2.0/meroctl_aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ff97d08c90b0fe405ad86dc17167dfa0339b8f7519a1c8d336e6709c433df8ad"
     elsif OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/calimero-network/core/releases/download/v0.1.1/meroctl_x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2d9490dcf722761d1400d7f05cffa80606c533491b2071f6fd66037fafd1ec47"
+      url "https://github.com/calimero-network/core/releases/download/meroctl-0.2.0/meroctl_x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f8f711384498fea5a30847a1984d1f910a5ab4972a97d946dfcac62d056a6183"
     else
       odie "Unsupported platform"
     end
-  
+
     def install
       bin.install "meroctl"
     end
-  
+
     test do
       assert_match "Meroctl CLI", shell_output("#{bin}/meroctl --help")
     end
   end
-  
