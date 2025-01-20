@@ -24,6 +24,6 @@ class Meroctl < Formula
   end
 
   test do
-    assert_match "meroctl CLI", shell_output("#{bin}/meroctl --help")
+    assert_match "Meroctl CLI", shell_output("#{bin}/meroctl --help")
   end
 end
