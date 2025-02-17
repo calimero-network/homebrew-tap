@@ -1,7 +1,7 @@
 class Merod < Formula
   desc "Command-line tool for Calimero Network setup"
   homepage "https://github.com/calimero-network/core"
-  version "0.3.1"
+  version "0.4.0"
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/merod-0.3.1/merod_aarch64-apple-darwin.tar.gz"

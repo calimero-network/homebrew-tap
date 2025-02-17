@@ -1,7 +1,7 @@
 class Meroctl < Formula
   desc "Command-line tool for Calimero Network"
   homepage "https://github.com/calimero-network/core"
-  version "0.3.1"
+  version "0.4.0"
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/meroctl-0.3.1/meroctl_aarch64-apple-darwin.tar.gz"
