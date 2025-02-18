@@ -5,7 +5,7 @@ class Meroctl < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/0.4.0/meroctl_aarch64-apple-darwin.tar.gz"
-    sha256 "9df3b4db83421d128e69d13f622a123220749b2943206b1d67350d75298a91a9"
+    sha256 "363bda3d1e9774140fc26a4453207fbcca52d3ed949c976baec60316b51eff9e"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/calimero-network/core/releases/download/0.4.0/meroctl_x86_64-apple-darwin.tar.gz"
     sha256 "9510c34dfae5186755201360f92ee99b5ed28e52fc9bb743480cab5024208034"

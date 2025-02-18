@@ -5,7 +5,7 @@ class Merod < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/0.4.0/merod_aarch64-apple-darwin.tar.gz"
-    sha256 ""
+    sha256 "c6e93b3b7dcdad85c4fe73dc011ec49dbda7b08c5e84669af4dbb51355200866"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/calimero-network/core/releases/download/0.4.0/merod_x86_64-apple-darwin.tar.gz"
     sha256 "3abdcfce07c2975342ea8ed4308baf622a4568d58c877c06911d32c944b6c02a"
