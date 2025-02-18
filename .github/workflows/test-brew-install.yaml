@@ -1,0 +1,43 @@
+name: Test Brew Install
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Add Homebrew tap
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            ln -Fs "$(pwd)" "$(brew --repository)/Library/Taps/$GITHUB_REPOSITORY"
+          fi
+
+      - name: Install binaries
+        run: |
+          brew install meroctl
+          brew install merod
+
+      - name: Validate binaries installation
+        run: |
+          which meroctl
+          meroctl --version
+          which merod
+          merod --version
