@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if version and binary are provided
 if [ -z "$1" ] || [ -z "$2" ]; then
   echo "Usage: $0 <binary> <version>"
@@ -19,6 +21,7 @@ declare -A DESCRIPTIONS
 DESCRIPTIONS=(
   ["meroctl"]="Command-line tool for Calimero Network"
   ["merod"]="Command-line tool for Calimero Network setup"
+  ["calimero-abi"]="CLI tool for extracting Calimero WASM ABI"
 )
 
 if [ -z "${DESCRIPTIONS[$BINARY]}" ]; then
@@ -31,6 +34,7 @@ declare -A PRETTY_NAMES
 PRETTY_NAMES=(
   ["meroctl"]="Meroctl"
   ["merod"]="Merod"
+  ["calimero-abi"]="CalimeroAbi"
 )
 
 if [ -z "${PRETTY_NAMES[$BINARY]}" ]; then
