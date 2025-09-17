@@ -1,20 +1,20 @@
 class CalimeroAbi < Formula
   desc "CLI tool for extracting Calimero WASM ABI"
   homepage "https://github.com/calimero-network/core"
-  version "0.8.0-rc.9"
+  version "0.8.0-rc.10"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.9/calimero-abi_aarch64-apple-darwin.tar.gz"
-    sha256 "ef1d22894a592e7f66f72cd07346a10dac082a4983c3c5d72edab43b24a57dc6"
+    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.10/calimero-abi_aarch64-apple-darwin.tar.gz"
+    sha256 "e72dd9d092db3434ff511150bd79e309497af62729188df0d43bb515f7f178cd"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.9/calimero-abi_x86_64-apple-darwin.tar.gz"
-    sha256 "7de67655be399154b327170ff960ebd4989c4a23a3d5290cd000342dafd59f66"
+    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.10/calimero-abi_x86_64-apple-darwin.tar.gz"
+    sha256 "308523489030d5424225cf44824d18371c581d67d9f0ba3694935a4038c080cf"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.9/calimero-abi_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "822dd60e4acb539cf0c981c291bf0547f63f365c6051665467148c6942d4ca9e"
+    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.10/calimero-abi_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "ed933ddcf851851a3767ecab0ecc2fde79be879176ef1f0bcd6afaf9197f67a9"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.9/calimero-abi_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "e2dbd1c478bb99b7db89b605126aa065bcb736876962c11dbb945467921846d1"
+    url "https://github.com/calimero-network/core/releases/download/0.8.0-rc.10/calimero-abi_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "34c412f0d63afea76311c4ef2a9b5647584f32f0e7118e12dbc40e2edf123f28"
   else
     odie "Unsupported platform"
   end
