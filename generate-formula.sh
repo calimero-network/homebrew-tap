@@ -22,7 +22,6 @@ DESCRIPTIONS=(
   ["merod"]="Command-line tool for Calimero Network setup"
   ["meroctl"]="Command-line tool for Calimero Network"
   ["mero-abi"]="CLI tool for extracting Calimero WASM ABI"
-  ["cargo-mero"]="Cargo subcommand for Calimero Network tooling"
 )
 
 if [ -z "${DESCRIPTIONS[$BINARY]}" ]; then
@@ -36,7 +35,6 @@ PRETTY_NAMES=(
   ["merod"]="Merod"
   ["meroctl"]="Meroctl"
   ["mero-abi"]="MeroAbi"
-  ["cargo-mero"]="CargoMero"
 )
 
 if [ -z "${PRETTY_NAMES[$BINARY]}" ]; then
