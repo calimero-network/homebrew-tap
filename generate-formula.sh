@@ -19,9 +19,10 @@ calculate_sha256() {
 
 declare -A DESCRIPTIONS
 DESCRIPTIONS=(
-  ["meroctl"]="Command-line tool for Calimero Network"
   ["merod"]="Command-line tool for Calimero Network setup"
-  ["calimero-abi"]="CLI tool for extracting Calimero WASM ABI"
+  ["meroctl"]="Command-line tool for Calimero Network"
+  ["mero-abi"]="CLI tool for extracting Calimero WASM ABI"
+  ["cargo-mero"]="Cargo subcommand for Calimero Network tooling"
 )
 
 if [ -z "${DESCRIPTIONS[$BINARY]}" ]; then
@@ -32,9 +33,10 @@ DESCRIPTION=${DESCRIPTIONS[$BINARY]}
 
 declare -A PRETTY_NAMES
 PRETTY_NAMES=(
-  ["meroctl"]="Meroctl"
   ["merod"]="Merod"
-  ["calimero-abi"]="CalimeroAbi"
+  ["meroctl"]="Meroctl"
+  ["mero-abi"]="MeroAbi"
+  ["cargo-mero"]="CargoMero"
 )
 
 if [ -z "${PRETTY_NAMES[$BINARY]}" ]; then
