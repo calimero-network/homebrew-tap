@@ -22,6 +22,7 @@ DESCRIPTIONS=(
   ["merod"]="Command-line tool for Calimero Network setup"
   ["meroctl"]="Command-line tool for Calimero Network"
   ["mero-abi"]="CLI tool for extracting Calimero WASM ABI"
+  ["mero-relayer"]="Service for relaying requests from Calimero to external blockchains"
 )
 
 if [ -z "${DESCRIPTIONS[$BINARY]}" ]; then
@@ -35,6 +36,7 @@ PRETTY_NAMES=(
   ["merod"]="Merod"
   ["meroctl"]="Meroctl"
   ["mero-abi"]="MeroAbi"
+  ["mero-relayer"]="MeroRelayer"
 )
 
 if [ -z "${PRETTY_NAMES[$BINARY]}" ]; then
