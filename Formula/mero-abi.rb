@@ -6,9 +6,6 @@ class MeroAbi < Formula
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.39/mero-abi_aarch64-apple-darwin.tar.gz"
     sha256 "bbcd27ca5088e837b917a96783dd921d9d147704249d22f365f208203f2dae33"
-  elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.39/mero-abi_x86_64-apple-darwin.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.39/mero-abi_aarch64-unknown-linux-gnu.tar.gz"
     sha256 "7e7c759d0619cbc314bf43d7b7b4f7cb4d9a78ce75a0eb3a8350c601d6affaf2"
