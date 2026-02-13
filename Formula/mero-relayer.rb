@@ -7,8 +7,7 @@ class MeroRelayer < Formula
     url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.42/mero-relayer_aarch64-apple-darwin.tar.gz"
     sha256 "bc0f5189921a5498e23f22cb9effd25a0bb60f7f546ca36f984fbda1a8c76884"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.42/mero-relayer_x86_64-apple-darwin.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    odie "Intel macOS binaries are not available for 0.10.0-rc.42"
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.42/mero-relayer_aarch64-unknown-linux-gnu.tar.gz"
     sha256 "acc458f599fe0776112250cf36c223f8454ae10f9f5c630aef70eb70beaa7d22"
