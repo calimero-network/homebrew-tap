@@ -1,19 +1,19 @@
 class MeroRelayer < Formula
   desc "Service for relaying requests from Calimero to external blockchains"
   homepage "https://github.com/calimero-network/core"
-  version "0.10.0-rc.47"
+  version "0.10.0-rc.48"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.47/mero-relayer_aarch64-apple-darwin.tar.gz"
-    sha256 "1f749ee381a77281eec420f481ed46f7302ef48388f1767d59a4fef25b8baba3"
+    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.48/mero-relayer_aarch64-apple-darwin.tar.gz"
+    sha256 "9925fdd80cee1ca53ad7d46e26ae131df35e61e8c5a91f1b713e19fc82ff1a26"
   elsif OS.mac? && Hardware::CPU.intel?
-    odie "Intel macOS binaries are not available for 0.10.0-rc.47"
+    odie "Intel macOS binaries are not available for 0.10.0-rc.48"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.47/mero-relayer_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "657583481527eb77cf8874728eeb7b4e794119ed7b09fc8efa5a95b46c2ba8a7"
+    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.48/mero-relayer_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "36c8e34d6c1c63c4175efd982c063ca2c6da59d0d53cbaaf73fb1517a0b46fa3"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.47/mero-relayer_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "60bb3e5d20635743ddf4a74d50c19b62164217c60917a3b0b03f57610a3e9beb"
+    url "https://github.com/calimero-network/core/releases/download/0.10.0-rc.48/mero-relayer_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "500cbc5fb0a3711fe317e144b03b459f2fdab73288a58f9a977bd142f8d7adf9"
   else
     odie "Unsupported platform"
   end
