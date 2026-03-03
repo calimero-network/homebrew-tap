@@ -1,19 +1,19 @@
 class Meroctl < Formula
   desc "Command-line tool for Calimero Network"
   homepage "https://github.com/calimero-network/core"
-  version "0.10.0"
+  version "0.10.1-rc.1"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0/meroctl_aarch64-apple-darwin.tar.gz"
-    sha256 "08cef62ca20bbbb4e235cd55d6bfc64899e62117d04f47de99f177c874a9f4a4"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.1/meroctl_aarch64-apple-darwin.tar.gz"
+    sha256 "b4a9fb792b5f610211a3baeec2a2745a2bb3fc2227a83153d4395198e78a96cb"
   elsif OS.mac? && Hardware::CPU.intel?
-    odie "Intel macOS binaries are not available for 0.10.0"
+    odie "Intel macOS binaries are not available for 0.10.1-rc.1"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0/meroctl_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "afdfe11928874659fe944a126b422836bff8f53513d53058288f53f061bb2b9d"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.1/meroctl_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "c73e6fcc08e704acda122a1d5d04e49908233f7b5f8d99e930da611111ecf344"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.10.0/meroctl_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "6add3eb5ee80d4095e0cac8b92495d7091dd9eb014cf2b8e8f3793c85de91ec7"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.1/meroctl_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "1a60cf42eb4ab3141e6a8aefb02f5c6d7a42105df7ba7be19bd891f91dc8b802"
   else
     odie "Unsupported platform"
   end
