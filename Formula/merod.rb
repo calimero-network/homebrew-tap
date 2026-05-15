@@ -1,19 +1,19 @@
 class Merod < Formula
   desc "Command-line tool for Calimero Network setup"
   homepage "https://github.com/calimero-network/core"
-  version "0.10.1-rc.37"
+  version "0.10.1-rc.38"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.37/merod_aarch64-apple-darwin.tar.gz"
-    sha256 "88ed240fc31c820e819b6348f0c4fcb18f41e968dbeda12a35584d2ba96cdc9d"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.38/merod_aarch64-apple-darwin.tar.gz"
+    sha256 "4d1832eef8a988074b4069273b07ec90b067c8e17789002c76d1622b452f3aeb"
   elsif OS.mac? && Hardware::CPU.intel?
-    odie "Intel macOS binaries are not available for 0.10.1-rc.37"
+    odie "Intel macOS binaries are not available for 0.10.1-rc.38"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.37/merod_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "dd2aec4b333f6e46462cf9db6494b556ad0e0d0b31fe608c6dedd638a0f44a00"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.38/merod_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "049b0dc705472a208e6aa1fdb1378c7482afc69271d8457ec5269a8850829ae5"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.37/merod_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "8fe9e6a52f414edab1300855584af61746f8e54b23db973ad5f5f3217cc2bb91"
+    url "https://github.com/calimero-network/core/releases/download/0.10.1-rc.38/merod_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "d7d54f11b44146c4c65b68d879f2da598597cfd73066fee8c2fc63565fc5b070"
   else
     odie "Unsupported platform"
   end
