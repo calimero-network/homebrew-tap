@@ -1,19 +1,19 @@
 class MeroAbi < Formula
   desc "CLI tool for extracting Calimero WASM ABI"
   homepage "https://github.com/calimero-network/core"
-  version "0.11.0-rc.49"
+  version "0.11.0-rc.50"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.49/mero-abi_aarch64-apple-darwin.tar.gz"
-    sha256 "839d6f16775b6d5a23dd4f1896dfc23f10b06e9c1c77ec55bde0882b09807ff8"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.50/mero-abi_aarch64-apple-darwin.tar.gz"
+    sha256 "69dee626b78d03fe12102ea9bb509c719e4647d1222e38f284b251bd3fe0208b"
   elsif OS.mac? && Hardware::CPU.intel?
-    odie "Intel macOS binaries are not available for 0.11.0-rc.49"
+    odie "Intel macOS binaries are not available for 0.11.0-rc.50"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.49/mero-abi_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "72f3e825abc5b6142f26c3bcb8de5e26d66b05fd09654d672c07700781f457ba"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.50/mero-abi_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "cd52f03eeab3b2cd27be7b46c5d60f860ac4dd40e53ca4bddc5ad6ae747f246e"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.49/mero-abi_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "6679b4849705a52cef2469af101b692631f8d7e9e812decee0f8bb037ca9742c"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.50/mero-abi_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "b977eb28ea8e97eacd4382c4e6c329c0b635c3f87e2de09ad57c6e33390bb07a"
   else
     odie "Unsupported platform"
   end
