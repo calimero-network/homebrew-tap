@@ -1,19 +1,19 @@
 class CargoMero < Formula
   desc "Calimero application toolchain: scaffold, build, test, and bundle WASM apps"
   homepage "https://github.com/calimero-network/core"
-  version "0.11.0-rc.78"
+  version "0.11.0-rc.79"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.78/cargo-mero_aarch64-apple-darwin.tar.gz"
-    sha256 "4f7690ad66b7cc2fffda50f3c5bc6d8bd5de6654d29c1640af30459c7172570a"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.79/cargo-mero_aarch64-apple-darwin.tar.gz"
+    sha256 "f28ee97a5e31fbcf1573a40746995ec54db263b76da0393356df64e178b3a305"
   elsif OS.mac? && Hardware::CPU.intel?
-    odie "Intel macOS binaries are not available for 0.11.0-rc.78"
+    odie "Intel macOS binaries are not available for 0.11.0-rc.79"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.78/cargo-mero_aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "f86f67838824074b27c0ea282cfa15d4df37ae7f99b0f7013ed795cf4de64f5e"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.79/cargo-mero_aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "ae1908d12970615bfcd35de4b1fcf850dec563d3f6b59ffd6c151bcf7e1714b5"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.78/cargo-mero_x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "6758fd1b3fc4f41e5ff4e5e69f897c32b62f7991723245615c92450fcdc77895"
+    url "https://github.com/calimero-network/core/releases/download/0.11.0-rc.79/cargo-mero_x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "b590e32e7c9570b07201f2b6acb4bfaf266dc5859c5f031e8f3a59ad36e87e80"
   else
     odie "Unsupported platform"
   end
