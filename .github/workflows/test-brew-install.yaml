@@ -1,5 +1,9 @@
 name: Test Brew Install
 
+# Every formula installs from this checkout and reports the version it names,
+# on Linux and macOS. A formula whose release has no build for the runner's
+# platform (merod on macOS before core 1.0.0-rc.25) is skipped there.
+
 on:
   push:
     branches:
@@ -12,6 +16,7 @@ on:
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
 
@@ -24,23 +29,26 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Add Homebrew tap
+      - name: Use this checkout as the tap
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            ln -Fs "$(pwd)" "$(brew --repository)/Library/Taps/$GITHUB_REPOSITORY"
-          fi
+          tap="$(brew --repository)/Library/Taps/${GITHUB_REPOSITORY%/*}/homebrew-tap"
+          rm -rf "$tap"
+          mkdir -p "$(dirname "$tap")"
+          ln -s "$PWD" "$tap"
 
-      - name: Install binaries
+      - name: Install and check each formula
         run: |
-          brew install meroctl
-          brew install merod
-          brew install cargo-mero
-
-      - name: Validate binaries installation
-        run: |
-          which meroctl
-          meroctl --version
-          which merod
-          merod --version
-          which cargo-mero
-          cargo-mero mero --version
+          set -euo pipefail
+          tap="${GITHUB_REPOSITORY%/*}/tap"
+          case "$RUNNER_OS" in macOS) target=aarch64-apple-darwin ;; *) target=x86_64-unknown-linux-gnu ;; esac
+          for formula in Formula/*.rb; do
+            name=$(basename "$formula" .rb)
+            version=$(sed -n 's/^  version "\(.*\)"$/\1/p' "$formula")
+            if ! grep -q "${name}_${target}.tar.gz" "$formula"; then
+              echo "::notice::$name $version has no $target build: skipped on $RUNNER_OS"
+              continue
+            fi
+            brew install "$tap/$name"
+            "$name" --version | tee /dev/stderr | grep -qF "$version"
+            brew test "$tap/$name"
+          done
